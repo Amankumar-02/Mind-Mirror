@@ -1,4 +1,3 @@
-// import  from 'react'
 import React, { useEffect, useState } from "react";
 import authService from "./appwrite/auth";
 import "./App.css";
@@ -7,9 +6,6 @@ import { login, logout } from "./features/auth/authSlice";
 import {Header,Footer,} from "./components/index";
 import { Outlet } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-// import { icons } from "lucide-react";
-
-// const options = ["react", "vue", "angular"];
 
 function App() {
   const [loading, setLoading] = useState(true);

@@ -39,6 +39,7 @@ const Header = () => {
   ];
 
   const handleOpen = () => {
+    // window.location.reload();
     setOpen(!open);
   };
 
@@ -93,7 +94,7 @@ const Header = () => {
           className="btn btn-ghost normal-case text-xl"
         >
           <FaMastodon />
-          Medium
+          Mega Blog
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

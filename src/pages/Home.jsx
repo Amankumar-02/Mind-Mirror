@@ -56,17 +56,15 @@ const Home = () => {
       ) : (
         <div className=" my-10 px-4">
           <div
-            className="h-[50vh] mb-16 md:mb-4 lg:mb-4"
+            className="mb-16 md:mb-4 lg:mb-4"
           >
             <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
               <p className="mb-4 text-2xl lg:text-3xl  tracking-tight font-bold text-gray-900 dark:text-accent">
                 Hey Developers...
                 <br />
-                Welcome to Medium, where we talk about <br></br>
+                Welcome to Mega Blog, where we talk about <br></br>
                 <TypeAnimation
                   sequence={[
-                    " <Engineering/>",
-                    2000,
                     " <Development/>",
                     2000,
                     " <Bugs/>",

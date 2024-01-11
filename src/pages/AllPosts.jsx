@@ -28,7 +28,7 @@ const AllPosts = () => {
   return (
     <div className="w-full my-16">
       <Container>
-        <div className="flex flex-wrap justify-center items-center  w-full lg:gap-32 md:gap-32 gap-8">
+        <div className="flex flex-wrap justify-center items-center w-full md:gap-32 gap-8">
           {allPost &&
             allPost.map((post) => (
               <div
