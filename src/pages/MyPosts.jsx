@@ -5,13 +5,14 @@ import { useSelector } from "react-redux";
 
 function MyPosts() {
   const [allPost, setAllPost] = useState(null);
-  const posts = useSelector((state) => state.posts.posts);
+  // const posts = useSelector((state) => state.posts.posts);
   const userData = useSelector((state) => state.auth.userData);
+  // console.log(posts);
 
   useEffect(() => {
-    if (posts.length > 0) {
-      setAllPost(posts);
-    } else {
+    // if (posts.length > 0) {
+    //   setAllPost(posts);
+    // } else {
       appwriteService
         .getPosts()
         .then((posts) => {
@@ -23,14 +24,18 @@ function MyPosts() {
         .catch((err) => {
           console.log(err);
         });
-    }
-  }, []);
+    // }
+  }, [userData]);
+
+  if (allPost === null) {
+    return <Loader />;
+  }
 
   return (
-    <div className="w-full my-16">
+      <div className="w-full my-16">
       <Container>
         <div className="flex flex-wrap justify-center items-center w-full md:gap-32 gap-8">
-          {allPost ? (
+          {allPost.length > 0 ? (
             allPost.map((post) => (
               <div
                 key={post.$id}
@@ -40,7 +45,7 @@ function MyPosts() {
               </div>
             ))
           ) : (
-            <Loader />
+            <h1 className="h-[70vh]">No post added yet.</h1>
           )}
         </div>
       </Container>
