@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import appwriteService from "../appwrite/database";
-import { Container, PostCard } from "../components/index";
+import { Container, Loader, PostCard } from "../components/index";
 import { useSelector } from "react-redux";
 
 const AllPosts = () => {
@@ -29,15 +29,15 @@ const AllPosts = () => {
     <div className="w-full my-16">
       <Container>
         <div className="flex flex-wrap justify-center items-center w-full md:gap-32 gap-8">
-          {allPost &&
-            allPost.map((post) => (
+          {allPost?
+            (allPost.map((post) => (
               <div
                 key={post.$id}
                 className="w-[300px] flex  justify-center items-center "
               >
                 <PostCard {...post} />
               </div>
-            ))}
+            ))) : <Loader/>}
         </div>
       </Container>
     </div>

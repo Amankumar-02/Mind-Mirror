@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, PostForm } from "../components/index";
+import { Container, Loader, PostForm } from "../components/index";
 
 import { useParams, useNavigate } from "react-router-dom";
 import appwriteService from "../appwrite/database";
@@ -23,7 +23,7 @@ const EditPost = () => {
             <PostForm post = {post}/>
         </Container>
     </div>
-  ) : null
+  ) : <Loader/>
 };
 
 export default EditPost;

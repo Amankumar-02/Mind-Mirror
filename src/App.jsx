@@ -19,7 +19,7 @@ function App() {
       .getCurrentUser()
       .then((userData) => {
         if (userData) {
-          dispatch(login({ userData }));
+          dispatch(login(userData));
           toast.success(`hey ${userData.name}`, 
           // {icon: "🙋‍♂️",}
           );

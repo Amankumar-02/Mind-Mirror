@@ -62,7 +62,7 @@ const Home = () => {
               <p className="mb-4 text-2xl lg:text-3xl  tracking-tight font-bold text-gray-900 dark:text-accent">
                 Hey Developers...
                 <br />
-                Welcome to Mega Blog, where we talk about <br></br>
+                Welcome to Mind Mirror, where we talk about <br></br>
                 <TypeAnimation
                   sequence={[
                     " <Development/>",
@@ -94,7 +94,7 @@ const Home = () => {
 
               {/* <p className="font-fira-code font-light text-gray-300 sm:text-xl dark:text-gray-300">
                 Welcome to our tech hub!{" "}
-                <span className="text-secondary">Medium</span> is your window
+                <span className="text-secondary">Mind Mirror</span> is your window
                 into the world of engineering and development. Dive deep into
                 the realm of bugs, errors, and innovation. We're here to
                 inspire, educate, and keep you in the know. Join us in exploring

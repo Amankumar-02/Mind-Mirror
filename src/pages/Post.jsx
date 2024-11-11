@@ -10,7 +10,6 @@ import toast, { Toaster } from "react-hot-toast";
 export default function Post() {
   const [post, setPost] = useState(null);
   
-  console.log(post)
   const [allposts, setAllPosts] = useState(null);
   const storePosts = useSelector((state) => state.posts.posts);
 
@@ -95,6 +94,7 @@ export default function Post() {
           <span>Created on: {createdDate}</span>
         </div>
         <div className="w-full flex justify-center mb-4 relative  border-gray-400 border md:border-none rounded-xl p-2 gap-5">
+          <div className="relative">
           <img
             src={appwriteService.getFilePreview(post?.featuredImage)}
             alt={post?.title}
@@ -102,17 +102,18 @@ export default function Post() {
           />
 
           {isAuthor && (
-            <div className="absolute right-0 top-6 ">
+            <div className="absolute right-[6px] lg:right-[16px] top-[6px] lg:top-[16px] bg-black opacity-70 p-2 rounded-xl">
               <Link to={`/edit-post/${post.$id}`}>
-                <Button className="mr-3" text="Edit"></Button>
+                <Button className="mr-3 px-3 lg:px-4 lg:py-1" text="Edit"></Button>
               </Link>
               <Button
-                bgColor="bg-red-500"
+                className="hover:bg-red-500 hover:border-red-500 px-3 lg:px-4 lg:py-1"
                 onClick={deletePost}
                 text="Delete"
               ></Button>
             </div>
           )}
+          </div>
         </div>
 
         <div className=" mt-16  browser-css text-xl lg:text-xl text-center">
@@ -121,8 +122,8 @@ export default function Post() {
       </Container>
 
       {allposts && (
-        <div className="mb-10 mt-20 px-4 text-center">
-          <h3 className="text-3xl text-secondary font-semibold mb-6">
+        <div className="mb-16 mt-20 px-4 text-center">
+          <h3 className="text-3xl text-secondary font-semibold mb-16">
             Some of our Blogs
           </h3>
           <PostCarousel posts={allposts} />

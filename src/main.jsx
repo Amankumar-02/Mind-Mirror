@@ -38,7 +38,9 @@ const router = createBrowserRouter(
             </AuthLayout>
             }/>
             <Route path='/post/:slug' element={
+            <AuthLayout>
             <Post/>
+            </AuthLayout>
             }/>
         </Route>
     )

@@ -91,10 +91,11 @@ const Header = () => {
         </div>
 
         <a
+          href="/"
           className="btn btn-ghost normal-case text-xl"
         >
           <FaMastodon />
-          Mega Blog
+          Mind Mirror
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

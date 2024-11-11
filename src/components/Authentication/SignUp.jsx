@@ -40,7 +40,7 @@ import toast, { Toaster } from "react-hot-toast";
       <Toaster />
       <div className="w-full p-6 m-auto bg-primary grid  border-gray-400 place-content-center border rounded-md shadow-md lg:max-w-lg">
         <h1 className="text-3xl font-semibold text-center text-secondary flex justify-center gap-1 items-center">
-          <FaMastodon /> Mega Blog
+          <FaMastodon /> Mind Mirror
         </h1>
         <h2 className="text-center text-2xl font-bold leading-tight">
             Sign up to create account

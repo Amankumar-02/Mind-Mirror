@@ -38,7 +38,7 @@ function Login (){
       <Toaster/>
       <div className="w-full p-6 m-auto bg-primary rounded-md border border-gray-400 grid place-content-center shadow-md lg:max-w-lg">
         <h1 className="text-3xl font-semibold text-center text-secondary flex justify-center gap-1 items-center">
-          <FaMastodon /> Mega Blog
+          <FaMastodon /> Mind Mirror
         </h1>
         <h2 className="text-center text-2xl font-bold leading-tight">
             Sign in to your account
