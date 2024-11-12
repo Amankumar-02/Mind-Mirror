@@ -22,7 +22,7 @@ export default function Post() {
         .then((posts) => {
           if (posts) {
             setAllPosts(posts.documents);
-            console.log("service returned");
+            // console.log("service returned");
           }
         })
         .catch((err) => {

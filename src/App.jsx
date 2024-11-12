@@ -20,7 +20,7 @@ function App() {
       .then((userData) => {
         if (userData) {
           dispatch(login(userData));
-          toast.success(`hey ${userData.name}`, 
+          toast.success(`Hey ${userData.name || "Anonymous Guest"}`, 
           // {icon: "🙋‍♂️",}
           );
         } else {
@@ -35,7 +35,7 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
 
-  console.log(loading);
+  // console.log(loading);
 
   return !loading ? (
     // <div className={`min-h-screen flex flex-wrap content-between bg-[#020816]`}>

@@ -52,7 +52,7 @@ const PostForm = ({ post }) => {
           const dbPost = await appwriteService.createPost({
             ...data,
             userId: userData.$id,
-            author: userData?.name || "Unknown",
+            author: userData?.name ||  "Anonymous Guest",
           });
 
           if (dbPost) {

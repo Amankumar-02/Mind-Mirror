@@ -16,7 +16,7 @@ const AllPosts = () => {
         .then((posts) => {
           if (posts) {
             setAllPost(posts.documents);
-            console.log("service returned")
+            // console.log("service returned")
           }
         })
         .catch((err) => {

@@ -33,10 +33,45 @@ function Login (){
     }
   };
 
+  const loginOAuth = async () => {
+    setError("");
+    try {
+      const session = await authService.createGoogleLogin();
+      if (session) {
+        const userData = await authService.getCurrentUser();
+        toast.success(`Hey ${userData.name}`);
+        if (userData) {
+          dispatch(authLogin(userData));
+          navigate("/");
+        }
+      }
+    } catch (error) {
+      toast.error(error);
+    //   console.log(error);
+    }
+  };
+  const loginGuest = async () => {
+    setError("");
+    try {
+      const session = await authService.createGuestLogin();
+      if (session) {
+        const userData = await authService.getCurrentUser();
+        toast.success(`Hey ${userData?.name || "Anonymous Guest"}`);
+        if (userData) {
+          dispatch(authLogin(userData));
+          navigate("/");
+        }
+      }
+    } catch (error) {
+      toast.error(error);
+    //   console.log(error);
+    }
+  };
+
   return (
-    <div className="relative flex px-4 flex-col justify-center items-center  h-screen overflow-hidden">
+    <div className="relative flex px-4 flex-col justify-center items-center overflow-hidden">
       <Toaster/>
-      <div className="w-full p-6 m-auto bg-primary rounded-md border border-gray-400 grid place-content-center shadow-md lg:max-w-lg">
+      <div className="w-full p-6 my-[3rem] mx-auto bg-primary rounded-md border border-gray-400 grid place-content-center shadow-md lg:max-w-lg">
         <h1 className="text-3xl font-semibold text-center text-secondary flex justify-center gap-1 items-center">
           <FaMastodon /> Mind Mirror
         </h1>
@@ -89,7 +124,12 @@ function Login (){
           ></Input>
 
           <div>
-            <Button type="submit" text="Log in" />
+            <Button type="submit" text="Log in" className="w-full"/>
+          </div>
+          <div className="flex flex-col gap-4">
+          <h1 className="text-center font-semibold text-blue-600">Other Methods</h1>
+            <Button text="Google Login" className="w-full" onClick={loginOAuth}/>
+            <Button text="Guest Login" className="w-full" onClick={loginGuest}/>
           </div>
         </form>
       </div>

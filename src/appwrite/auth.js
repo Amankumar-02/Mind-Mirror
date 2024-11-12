@@ -45,6 +45,20 @@ export class AuthService{
             console.log("Mind Mirror :" + error.message)
         }
     }
+    async createGoogleLogin(){
+        try {
+            return await this.account.createOAuth2Session("google", "http://localhost:5173")
+        } catch (error) {
+            throw("Mind Mirror Google OAuth Error:" + error.message)
+        }
+    }
+    async createGuestLogin(){
+        try {
+            return await this.account.createAnonymousSession();
+        } catch (error) {
+            throw("Mind Mirror Anonymous User Error:" + error.message)
+        }
+    }
 }
 
 const authService = new AuthService();
