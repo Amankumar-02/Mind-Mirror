@@ -1,30 +1,34 @@
 import { useState, useEffect } from "react";
 import appwriteService from "../appwrite/database";
-import { Container, Loader, PostCard } from "../components/index";
+import {
+  Container,
+  Loader,
+  PostCard,
+  BasicAuth,
+  GoogleAuth,
+  AnonymousAuth,
+} from "../components/index";
 import { useSelector } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 
 function MyPosts() {
   const [allPost, setAllPost] = useState(null);
-  // const posts = useSelector((state) => state.posts.posts);
   const userData = useSelector((state) => state.auth.userData);
-  // console.log(posts);
+  console.log(userData);
 
   useEffect(() => {
-    // if (posts.length > 0) {
-    //   setAllPost(posts);
-    // } else {
-      appwriteService
-        .getPosts()
-        .then((posts) => {
-          if (posts) {
-            setAllPost(posts.documents.filter(item=>item?.userId === userData?.$id));
-            // console.log("service returned");
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    // }
+    appwriteService
+      .getPosts()
+      .then((posts) => {
+        if (posts) {
+          setAllPost(
+            posts.documents.filter((item) => item?.userId === userData?.$id)
+          );
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [userData]);
 
   if (allPost === null) {
@@ -32,8 +36,26 @@ function MyPosts() {
   }
 
   return (
-      <div className="w-full my-16">
+    <div className="w-full my-16">
+      <Toaster />
       <Container>
+        {userData?.emailVerification ? (
+          <>
+            <GoogleAuth userData={userData} />
+          </>
+        ) : (
+          <>
+            {userData?.passwordUpdate === "" ? (
+              <>
+                <AnonymousAuth userData={userData} />
+              </>
+            ) : (
+              <>
+                <BasicAuth userData={userData} />
+              </>
+            )}
+          </>
+        )}
         <div className="flex flex-wrap justify-center items-center w-full md:gap-32 gap-8">
           {allPost.length > 0 ? (
             allPost.map((post) => (
@@ -45,7 +67,7 @@ function MyPosts() {
               </div>
             ))
           ) : (
-            <h1 className="h-[70vh]">No post added yet.</h1>
+            <h1 className="h-[70vh]">No new post added yet.</h1>
           )}
         </div>
       </Container>

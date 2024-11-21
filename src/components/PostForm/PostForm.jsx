@@ -93,7 +93,7 @@ const PostForm = ({ post }) => {
     <>
       <Toaster />
       {userData && (
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap min-h-[70vh]">
           <div className="md:w-2/3 lg:w-2/3 px-2">
             <Input
               label="Title :"

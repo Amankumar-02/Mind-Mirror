@@ -135,12 +135,12 @@ import toast, { Toaster } from "react-hot-toast";
           <div>
             <Button type="submit" text="Create Account"  className="w-full"/>
           </div>
-          <div className="flex flex-col gap-4">
+        </form>
+          <div className="flex flex-col gap-4 my-8">
             <h1 className="text-center font-semibold text-blue-600">Other Methods</h1>
             <Button text="Google Login" className="w-full" onClick={loginOAuth}/>
             <Button text="Guest Login" className="w-full" onClick={loginGuest}/>
           </div>
-        </form>
       </div>
     </div>
   );

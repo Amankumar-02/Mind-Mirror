@@ -59,6 +59,30 @@ export class AuthService{
             throw("Mind Mirror Anonymous User Error:" + error.message)
         }
     }
+    async updateUserName({newName}){
+        try {
+            return await this.account.updateName(newName);
+        } catch (error) {
+            throw("Mind Mirror UserName Update Error:" + error.message)
+        }
+    }
+    async updateUserEmail({newEmail, emailConfirmPassword}){
+        try {
+            return await this.account.updateEmail(newEmail, emailConfirmPassword);
+        } catch (error) {
+            throw("Mind Mirror UserName Update Error:" + error.message)
+        }
+    }
+    async updatePassword({oldPassword = "password", newPassword, confirmPassword}){
+        try {
+            if(newPassword !== confirmPassword){
+                throw new Error("Confirm password is not match"); 
+            }
+            return await this.account.updatePassword(newPassword, oldPassword);
+        } catch (error) {
+            throw("Mind Mirror UserName Update Error: Old password is invalid")
+        }
+    }
 }
 
 const authService = new AuthService();
