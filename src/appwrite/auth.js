@@ -47,7 +47,7 @@ export class AuthService{
     }
     async createGoogleLogin(){
         try {
-            return await this.account.createOAuth2Session("google", "http://localhost:5173")
+            return await this.account.createOAuth2Session("google", "https://mind-mirror.netlify.app", "http://localhost:5173")
         } catch (error) {
             throw("Mind Mirror Google OAuth Error:" + error.message)
         }
