@@ -31,7 +31,7 @@ const PostCard = ({ $id, title, featuredImage, author, $createdAt  }) => {
           <img
             className="h-[240px] sm:h-[200px] p-2"
             // src={appwriteService?.getFilePreview(featuredImage)}
-            src={`https://fra.cloud.appwrite.io/v1/storage/buckets/6536a1849852da85afde/files/${featuredImage}/view?project=65369fb166261b723ff3&mode=admin`}
+            src={`https://fra.cloud.appwrite.io/v1/storage/buckets/6536a1849852da85afde/files/${featuredImage}/view?project=65369fb166261b723ff3`}
             alt={title}
           />
         </figure>

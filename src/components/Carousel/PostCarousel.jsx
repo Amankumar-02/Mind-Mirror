@@ -33,7 +33,7 @@ const PostCarousel = ({posts}) => {
         responsive={responsive}
         infinite={true}
         autoPlay={true}
-        arrows={false}
+        arrows={true}
         >
         
         {posts && posts.map((post) => (
