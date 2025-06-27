@@ -131,7 +131,8 @@ const PostForm = ({ post }) => {
             {post && (
               <div className="w-full mb-4">
                 <img
-                  src={appwriteService.getFilePreview(post.featuredImage)}
+                  // src={appwriteService.getFilePreview(post.featuredImage)}
+                  src={`https://fra.cloud.appwrite.io/v1/storage/buckets/6536a1849852da85afde/files/${post?.featuredImage}/view?project=65369fb166261b723ff3&mode=admin`}
                   alt={post.title}
                   className="rounded-lg"
                 />
