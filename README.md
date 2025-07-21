@@ -8,8 +8,8 @@ Mind Mirror is a full-stack blogging web application that empowers users to expr
 
 ## 🚀 Live Demo & Repository
 
-🔗 [Live Application]: [GadgetGlance Live](https://mind-mirror.netlify.app/)  
-📂 [Repository]: [GitHub - GadgetGlance](https://github.com/Amankumar-02/Mind-Mirror)
+🔗 [Live Application]: [Mind Mirror Live](https://mind-mirror.netlify.app/)  
+📂 [Repository]: [GitHub - Mind Mirror](https://github.com/Amankumar-02/Mind-Mirror)
 
 ---
 
