@@ -1,4 +1,4 @@
-## 🧠 Mind Mirror - Personal Blogging Platform
+# 🧠 Mind Mirror - Personal Blogging Platform
 
 Mind Mirror is a modern, intuitive blogging platform designed for sharing personal thoughts and perspectives with complete privacy control and rich content creation capabilities.
 
