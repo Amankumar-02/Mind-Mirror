@@ -105,7 +105,7 @@ yarn install
 3. Environment Setup:
 Create a .env.local file in the root directory
 
-4. Firebase Setup
+4. Appwrite Setup
 Set up your Appwrite collections
 
 5. Start the development server
